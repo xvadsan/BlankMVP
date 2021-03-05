@@ -1,7 +1,8 @@
-package com.xvadsan.blankmvp
+package com.xvadsan.blankmvp.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.xvadsan.blankmvp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
