@@ -7,3 +7,5 @@ Use:
 - Kotlin extensions
 - Clean architecture 
 - Motion layout
+- State switcher realization
+- Google navigation component
