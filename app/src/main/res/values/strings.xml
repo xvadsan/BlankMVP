@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BlankMVP</string>
+    <string name="state_unknown_error">Неизвестная ошибка</string>
+    <string name="state_error_button">Повторить</string>
+    <string name="error_screen_ok">Хорошо</string>
+    <string name="error_screen_later">Попробуйте позднее</string>
+    <string name="error_screen_error">Ошибка</string>
+    <string name="loading_state_switcher_title">Загрузка…</string>
+    <string name="base_ok">Ok</string>
 </resources>
