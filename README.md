@@ -7,4 +7,3 @@ Use:
 - Kotlin extensions
 - Clean architecture 
 - Motion layout
-- 
