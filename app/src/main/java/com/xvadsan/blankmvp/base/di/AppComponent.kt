@@ -1,6 +1,7 @@
 package com.xvadsan.blankmvp.base.di
 
 import com.xvadsan.blankmvp.App
+import com.xvadsan.blankmvp.base.di.components.MainComponent
 import com.xvadsan.blankmvp.base.di.components.StartComponent
 import dagger.Component
 import javax.inject.Singleton
@@ -14,6 +15,8 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun inject(application: App)
+
+    fun createMainActivity(): MainComponent
 
     fun createStartFragment(): StartComponent
 
