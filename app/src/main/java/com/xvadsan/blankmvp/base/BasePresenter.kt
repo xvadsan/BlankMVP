@@ -12,11 +12,7 @@ abstract class BasePresenter<V : BaseContract.View> : BaseContract.Presenter {
         disposables.add(disposable)
     }
 
-    override fun stop() {
-        disposables.clear()
-    }
+    override fun stop() = disposables.clear()
 
-    override fun dispose() {
-        disposables.dispose()
-    }
+    override fun dispose() = disposables.dispose()
 }
