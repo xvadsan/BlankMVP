@@ -25,6 +25,20 @@ class StartFragment : BaseFragment<StartContract.Presenter>(), StartContract.Vie
         super.onViewCreated(view, savedInstanceState)
         presenter.view = this
         stateSwitcher.init(stateContainer)
+        onInitui()
+    }
+
+    private fun onInitui() {
+        etUsername.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                motionLayout.transitionToEnd()
+            }
+        }
+        etPassword.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                motionLayout.transitionToEnd()
+            }
+        }
     }
 
     override fun showError(throwable: Throwable) = Toast.makeText(requireContext(), throwable.message.toString(), Toast.LENGTH_SHORT).show()

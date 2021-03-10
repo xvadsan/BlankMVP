@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@layout/fragment_start_end"
+        app:constraintSetStart="@layout/fragment_start"
+        app:duration="500">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/vSecondBgView"
+            app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+
+            <KeyAttribute
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="0"
+                motion:motionTarget="@id/tvTitle" />
+
+            <KeyAttribute
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                motion:framePosition="50"
+                motion:motionTarget="@id/tvTitle" />
+
+            <KeyAttribute
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="100"
+                motion:motionTarget="@id/tvTitle" />
+
+            <KeyAttribute
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="0"
+                motion:motionTarget="@id/tvSubtitle" />
+
+            <KeyAttribute
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                motion:framePosition="50"
+                motion:motionTarget="@id/tvSubtitle" />
+
+            <KeyAttribute
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="100"
+                motion:motionTarget="@id/tvSubtitle" />
+
+            <KeyAttribute
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="0"
+                motion:motionTarget="@id/text2" />
+
+            <KeyAttribute
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                motion:framePosition="50"
+                motion:motionTarget="@id/text2" />
+
+            <KeyAttribute
+                android:scaleX="1"
+                android:scaleY="1"
+                motion:framePosition="100"
+                motion:motionTarget="@id/text2" />
+
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>

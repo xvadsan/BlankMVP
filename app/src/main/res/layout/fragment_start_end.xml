@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    app:layoutDescription="@xml/motion_start"
     app:visibilityMode="ignore"
     >
 
@@ -15,12 +14,12 @@
         android:id="@+id/ivLogo"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="0dp"
         android:src="@drawable/ic_corona"
-        app:layout_constraintBottom_toTopOf="@id/vWhite"
+        app:layout_constraintBottom_toBottomOf="@id/vWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/vWhite"
         />
 
     <TextView
@@ -29,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="@string/start_subtitle"
         android:textColor="#ffffff"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@id/tvTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvTitle"
@@ -59,7 +58,8 @@
         android:lines="2"
         android:text="@string/start_version"
         android:textColor="#ffffff"
-        android:textSize="15sp"
+        android:textSize="17sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@id/vWhite"
         app:layout_constraintEnd_toEndOf="@id/vWhite"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65"
+        app:layout_constraintGuide_percent="0.400684"
         />
 
     <View
@@ -78,6 +78,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorPrimaryDark"
+        android:hapticFeedbackEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

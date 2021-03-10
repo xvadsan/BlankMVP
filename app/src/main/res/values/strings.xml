@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">BlankMVP</string>
-    <string name="state_unknown_error">Неизвестная ошибка</string>
-    <string name="state_error_button">Повторить</string>
-    <string name="error_screen_ok">Хорошо</string>
-    <string name="error_screen_later">Попробуйте позднее</string>
-    <string name="error_screen_error">Ошибка</string>
-    <string name="loading_state_switcher_title">Загрузка…</string>
-    <string name="base_ok">Ok</string>
+    <string name="base_ok">OK</string>
+    <string name="base_cancel">Cancel</string>
+    <string name="state_unknown_error">Unknown error</string>
+    <string name="error_screen_later">Try later</string>
+    <string name="error_screen_error">Error</string>
+    <string name="start_subtitle">corona</string>
+    <string name="start_title">VIRUS</string>
+    <string name="start_version">H1N1</string>
+    <string name="start_login">Login</string>
+    <string name="start_password">Password</string>
+    <string name="start_enter">Enter</string>
+    <string name="start_restore_password">Restore password</string>
 </resources>
