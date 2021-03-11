@@ -32,6 +32,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -71,4 +74,8 @@ dependencies {
     def glide = "4.11.0"
     implementation "com.github.bumptech.glide:glide:$glide"
     kapt "com.github.bumptech.glide:compiler:$glide"
+
+    // ViewBindingPropertyDelegate
+    def binding = "1.4.1"
+    implementation "com.kirich1409.viewbindingpropertydelegate:vbpd-noreflection:$binding"
 }
