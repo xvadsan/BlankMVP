@@ -9,3 +9,4 @@ Use:
 - Motion layout (2 variants)
 - State switcher realization
 - Google navigation component
+- ViewBindingPropertyDelegate
