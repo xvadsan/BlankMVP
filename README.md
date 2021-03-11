@@ -6,6 +6,6 @@ Use:
 - RxJava2
 - Kotlin extensions
 - Clean architecture 
-- Motion layout
+- Motion layout (2 variants)
 - State switcher realization
 - Google navigation component
