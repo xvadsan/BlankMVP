@@ -1,10 +1,8 @@
-package com.xvadsan.blankmvp.base.di.modules
+package com.xvadsan.blankmvp.di.modules
 
-import com.xvadsan.blankmvp.base.di.scopes.MainScope
+import com.xvadsan.blankmvp.di.scopes.MainScope
 import com.xvadsan.blankmvp.ui.main.MainContract
 import com.xvadsan.blankmvp.ui.main.MainPresenter
-import com.xvadsan.blankmvp.ui.switcher.StateViewSwitcher
-import com.xvadsan.blankmvp.ui.switcher.ViewStateSwitcher
 import dagger.Binds
 import dagger.Module
 

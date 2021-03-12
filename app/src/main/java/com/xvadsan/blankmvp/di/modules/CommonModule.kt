@@ -1,6 +1,6 @@
-package com.xvadsan.blankmvp.base.di.modules
+package com.xvadsan.blankmvp.di.modules
 
-import com.xvadsan.blankmvp.base.di.scopes.CommonScope
+import com.xvadsan.blankmvp.di.scopes.CommonScope
 import com.xvadsan.blankmvp.ui.common.CommonContract
 import com.xvadsan.blankmvp.ui.common.CommonPresenter
 import com.xvadsan.blankmvp.ui.switcher.StateViewSwitcher

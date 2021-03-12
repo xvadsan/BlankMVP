@@ -1,4 +1,4 @@
-package com.xvadsan.blankmvp.base.di
+package com.xvadsan.blankmvp.di
 
 import android.app.Application
 import android.content.Context
@@ -15,7 +15,6 @@ class AppModule(
     @Singleton
     @Provides
     fun provideApplication(): Application = application
-
 
     @Singleton
     @Provides

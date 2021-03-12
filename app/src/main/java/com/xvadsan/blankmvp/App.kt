@@ -2,9 +2,9 @@ package com.xvadsan.blankmvp
 
 import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
-import com.xvadsan.blankmvp.base.di.AppComponent
-import com.xvadsan.blankmvp.base.di.AppModule
-import com.xvadsan.blankmvp.base.di.DaggerAppComponent
+import com.xvadsan.blankmvp.di.AppComponent
+import com.xvadsan.blankmvp.di.AppModule
+import com.xvadsan.blankmvp.di.DaggerAppComponent
 import io.reactivex.disposables.CompositeDisposable
 
 class App : Application() {

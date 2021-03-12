@@ -1,16 +1,18 @@
-package com.xvadsan.blankmvp.base.di
+package com.xvadsan.blankmvp.di
 
 import com.xvadsan.blankmvp.App
-import com.xvadsan.blankmvp.base.di.components.CommonComponent
-import com.xvadsan.blankmvp.base.di.components.MainComponent
-import com.xvadsan.blankmvp.base.di.components.StartComponent
+import com.xvadsan.blankmvp.data.image.AppGlideModule
+import com.xvadsan.blankmvp.di.components.CommonComponent
+import com.xvadsan.blankmvp.di.components.MainComponent
+import com.xvadsan.blankmvp.di.components.StartComponent
 import dagger.Component
 import javax.inject.Singleton
 
 @Singleton
 @Component(
     modules = [
-        AppModule::class
+        AppModule::class,
+        DatabaseModule::class
     ]
 )
 interface AppComponent {

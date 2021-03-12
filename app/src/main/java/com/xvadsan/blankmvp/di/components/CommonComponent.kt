@@ -1,7 +1,7 @@
-package com.xvadsan.blankmvp.base.di.components
+package com.xvadsan.blankmvp.di.components
 
-import com.xvadsan.blankmvp.base.di.modules.CommonModule
-import com.xvadsan.blankmvp.base.di.scopes.CommonScope
+import com.xvadsan.blankmvp.di.modules.CommonModule
+import com.xvadsan.blankmvp.di.scopes.CommonScope
 import com.xvadsan.blankmvp.ui.common.CommonFragment
 import dagger.Subcomponent
 

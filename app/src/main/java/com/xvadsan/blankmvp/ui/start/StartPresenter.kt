@@ -1,7 +1,7 @@
 package com.xvadsan.blankmvp.ui.start
 
 import com.xvadsan.blankmvp.base.BasePresenter
-import com.xvadsan.blankmvp.base.di.scopes.StartScope
+import com.xvadsan.blankmvp.di.scopes.StartScope
 import javax.inject.Inject
 
 @StartScope

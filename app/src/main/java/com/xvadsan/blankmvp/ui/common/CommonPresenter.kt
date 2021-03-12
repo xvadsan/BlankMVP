@@ -1,8 +1,7 @@
 package com.xvadsan.blankmvp.ui.common
 
 import com.xvadsan.blankmvp.base.BasePresenter
-import com.xvadsan.blankmvp.base.di.scopes.CommonScope
-import com.xvadsan.blankmvp.base.di.scopes.StartScope
+import com.xvadsan.blankmvp.di.scopes.CommonScope
 import javax.inject.Inject
 
 @CommonScope

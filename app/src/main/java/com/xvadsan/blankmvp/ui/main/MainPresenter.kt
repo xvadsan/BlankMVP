@@ -1,7 +1,7 @@
 package com.xvadsan.blankmvp.ui.main
 
 import com.xvadsan.blankmvp.base.BasePresenter
-import com.xvadsan.blankmvp.base.di.scopes.MainScope
+import com.xvadsan.blankmvp.di.scopes.MainScope
 import javax.inject.Inject
 
 @MainScope

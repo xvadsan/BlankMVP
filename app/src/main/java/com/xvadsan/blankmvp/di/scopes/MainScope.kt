@@ -1,4 +1,4 @@
-package com.xvadsan.blankmvp.base.di.scopes
+package com.xvadsan.blankmvp.di.scopes
 
 import javax.inject.Scope
 
