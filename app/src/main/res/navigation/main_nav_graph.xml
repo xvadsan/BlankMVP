@@ -12,6 +12,18 @@
         android:name="com.xvadsan.blankmvp.ui.start.StartFragment"
         android:label="StartFragment"
         tools:layout="@layout/fragment_start"
+        >
+        <action
+            android:id="@+id/action_startFragment_to_commonFragment"
+            app:destination="@id/commonFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/commonFragment"
+        android:name="com.xvadsan.blankmvp.ui.common.CommonFragment"
+        android:label="CommonFragment"
+        tools:layout="@layout/fragment_common"
         />
 
 </navigation>

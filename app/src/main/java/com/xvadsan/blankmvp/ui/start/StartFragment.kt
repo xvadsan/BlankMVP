@@ -3,6 +3,8 @@ package com.xvadsan.blankmvp.ui.start
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.xvadsan.blankmvp.App
 import com.xvadsan.blankmvp.R
@@ -18,10 +20,12 @@ class StartFragment : BaseFragment<StartContract.Presenter>(R.layout.fragment_st
     @Inject
     lateinit var stateSwitcher: StateViewSwitcher
     private val binding by viewBinding(FragmentStartBinding::bind)
+    private lateinit var navController: NavController
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter.view = this
+        navController = view.findNavController()
         stateSwitcher.init(stateContainer)
         onInitUi()
     }
@@ -38,7 +42,10 @@ class StartFragment : BaseFragment<StartContract.Presenter>(R.layout.fragment_st
             }
         }
         tvRestorePasswordLogin.onClick { Toast.makeText(requireContext(), "Restore", Toast.LENGTH_SHORT).show() }
+        btnAuthLogin.onClick { presenter.showCommonFragment() }
     }
+
+    override fun onShowCommonFragment() = navController.navigate(R.id.commonFragment)
 
     override fun showError(throwable: Throwable) = Toast.makeText(requireContext(), throwable.message.toString(), Toast.LENGTH_SHORT).show()
 

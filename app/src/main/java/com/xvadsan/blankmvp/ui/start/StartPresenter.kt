@@ -12,4 +12,6 @@ class StartPresenter @Inject constructor(
     override lateinit var view: StartContract.View
 
     override fun start() = Unit
+
+    override fun showCommonFragment() = view.onShowCommonFragment()
 }
