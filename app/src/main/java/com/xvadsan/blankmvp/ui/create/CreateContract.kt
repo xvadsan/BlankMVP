@@ -12,5 +12,6 @@ interface CreateContract {
 
     interface Presenter : BaseContract.Presenter {
         var view: View
+        fun createAccount(login: String, password:String, photo: ByteArray?)
     }
 }

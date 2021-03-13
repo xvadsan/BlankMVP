@@ -12,4 +12,5 @@
     <string name="start_password">Password</string>
     <string name="start_enter">Enter</string>
     <string name="start_create">Create account</string>
+    <string name="create_error">Not all fields are filled in or photo is not selected</string>
 </resources>

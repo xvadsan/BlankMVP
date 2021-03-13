@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools"
+    >
+
+    <Transition
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/expanded"
+        motion:duration="100"
+        motion:interpolator="easeInOut"
+        >
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:maxAcceleration="100"
+            app:touchAnchorId="@id/nsContainer"
+            app:touchAnchorSide="top"
+            />
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:pathMotionArc="none"
+                motion:percentX="100"
+                motion:percentY="100"
+                motion:target="@id/ivPhoto"
+                />
+        </KeyFrameSet>
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/expanded">
+
+        <Constraint
+            android:id="@id/nsContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vDivider"
+            />
+
+        <Constraint
+            android:id="@id/vToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Constraint
+            android:id="@id/ivBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/icnew_back"
+            app:layout_constraintBottom_toBottomOf="@+id/vToolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vToolbar"
+            />
+
+        <Constraint
+            android:id="@id/ivPhoto"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_preview_empty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:pathMotionArc="startVertical"
+            />
+
+        <Constraint
+            android:id="@id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLength="70"
+            android:text="Иван Петров"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivPhoto"
+            app:pathMotionArc="startHorizontal"
+            />
+
+        <Constraint
+            android:id="@+id/vDivider"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
+
+        <Constraint
+            android:id="@id/nsContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vToolbar"
+            />
+
+        <Constraint
+            android:id="@id/vToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <Constraint
+            android:id="@id/ivBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/icnew_back"
+            app:layout_constraintBottom_toBottomOf="@+id/vToolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vToolbar"
+            />
+
+        <Constraint
+            android:id="@id/ivPhoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_preview_empty"
+            app:layout_constraintBottom_toBottomOf="@id/ivBackBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/ivBackBtn"
+            app:layout_constraintTop_toTopOf="@id/ivBackBtn"
+            />
+
+        <Constraint
+            android:id="@id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:layout_marginStart="16dp"
+            android:maxLength="70"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/ivPhoto"
+            app:layout_constraintTop_toTopOf="@id/ivPhoto"
+            app:layout_constraintBottom_toBottomOf="@id/ivPhoto"
+            />
+
+        <Constraint
+            android:id="@+id/vDivider"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="20dp"
+            android:alpha="0"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            />
+
+    </ConstraintSet>
+
+</MotionScene>
