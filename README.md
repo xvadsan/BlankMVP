@@ -10,3 +10,5 @@ Use:
 - State switcher realization
 - Google navigation component
 - ViewBindingPropertyDelegate
+- Glide with custom AppGlideModule
+- Room with embedded and relation models
