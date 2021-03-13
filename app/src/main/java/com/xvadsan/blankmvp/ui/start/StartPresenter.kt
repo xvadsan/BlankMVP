@@ -14,4 +14,6 @@ class StartPresenter @Inject constructor(
     override fun start() = Unit
 
     override fun showCommonFragment() = view.onShowCommonFragment()
+
+    override fun showCreateFragment() = view.onShowCreateFragment()
 }

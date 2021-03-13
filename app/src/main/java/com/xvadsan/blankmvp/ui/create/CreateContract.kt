@@ -1,20 +1,16 @@
-package com.xvadsan.blankmvp.ui.start
+package com.xvadsan.blankmvp.ui.create
 
 import com.xvadsan.blankmvp.base.BaseContract
 
-interface StartContract {
+interface CreateContract {
 
     interface View : BaseContract.View {
         fun onShowLoad()
         fun onHideLoad()
         fun showError(throwable: Throwable)
-        fun onShowCommonFragment()
-        fun onShowCreateFragment()
     }
 
     interface Presenter : BaseContract.Presenter {
         var view: View
-        fun showCommonFragment()
-        fun showCreateFragment()
     }
 }

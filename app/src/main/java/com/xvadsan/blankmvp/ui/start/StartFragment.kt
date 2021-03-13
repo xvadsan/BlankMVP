@@ -41,11 +41,13 @@ class StartFragment : BaseFragment<StartContract.Presenter>(R.layout.fragment_st
                 motionLayout.transitionToEnd()
             }
         }
-        tvRestorePasswordLogin.onClick { Toast.makeText(requireContext(), "Restore", Toast.LENGTH_SHORT).show() }
+        tvCreateAccount.onClick { presenter.showCreateFragment() }
         btnAuthLogin.onClick { presenter.showCommonFragment() }
     }
 
     override fun onShowCommonFragment() = navController.navigate(R.id.commonFragment)
+
+    override fun onShowCreateFragment() = navController.navigate(R.id.createFragment)
 
     override fun showError(throwable: Throwable) = Toast.makeText(requireContext(), throwable.message.toString(), Toast.LENGTH_SHORT).show()
 

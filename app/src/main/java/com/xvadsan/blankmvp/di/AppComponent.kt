@@ -3,6 +3,7 @@ package com.xvadsan.blankmvp.di
 import com.xvadsan.blankmvp.App
 import com.xvadsan.blankmvp.data.image.AppGlideModule
 import com.xvadsan.blankmvp.di.components.CommonComponent
+import com.xvadsan.blankmvp.di.components.CreateComponent
 import com.xvadsan.blankmvp.di.components.MainComponent
 import com.xvadsan.blankmvp.di.components.StartComponent
 import dagger.Component
@@ -24,5 +25,7 @@ interface AppComponent {
     fun createStartFragment(): StartComponent
 
     fun createCommonFragment(): CommonComponent
+
+    fun createCreateFragment(): CreateComponent
 
 }

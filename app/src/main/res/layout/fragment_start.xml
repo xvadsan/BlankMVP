@@ -160,13 +160,13 @@
         />
 
     <TextView
-        android:id="@+id/tvRestorePasswordLogin"
+        android:id="@+id/tvCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:background="?attr/selectableItemBackground"
         android:padding="10dp"
-        android:text="@string/start_restore_password"
+        android:text="@string/start_create"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/vWhite"
