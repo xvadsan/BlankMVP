@@ -11,17 +11,16 @@ class User(
 
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name = "ID")
+    @ColumnInfo(name = "Id")
     var id: Long,
 
     @NonNull
-    @ColumnInfo(name = "USER")
+    @ColumnInfo(name = "User")
     var user: String,
 
-    @ColumnInfo(name = "LOGIN")
+    @ColumnInfo(name = "Login")
     var login: String,
 
-    @ColumnInfo(name = "PASSWORD")
+    @ColumnInfo(name = "Password")
     var password: String
-
 )

@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.xvadsan.blankmvp.data.database.model.EmbeddedUserPhoto
 import com.xvadsan.blankmvp.data.database.model.User
 import io.reactivex.Single
 
@@ -14,7 +15,9 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addUser(user: User)
 
-    @Query("SELECT * FROM UsersDB WHERE LOGIN = :login AND PASSWORD = :password ")
+    @Query("SELECT * FROM UsersDB WHERE Login = :login AND Password = :password")
     fun getUser(login: String, password: String): Single<User>
 
+    @Query("SELECT * FROM UsersDB WHERE Login = :login AND Password = :password ")
+    fun getUserWithPhoto(login: String, password: String): Single<EmbeddedUserPhoto>
 }
