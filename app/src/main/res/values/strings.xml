@@ -13,4 +13,7 @@
     <string name="start_enter">Enter</string>
     <string name="start_create">Create account</string>
     <string name="create_error">Not all fields are filled in or photo is not selected</string>
+    <string name="media_camera">Camera</string>
+    <string name="media_gallery">Gallery</string>
+    <string name="create_permission_error">Not all permissions have been granted</string>
 </resources>

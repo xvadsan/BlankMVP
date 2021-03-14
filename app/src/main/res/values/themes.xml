@@ -13,4 +13,9 @@
         <item name="android:windowActivityTransitions">true</item>
     </style>
 
+    <style name="MyRoundedCornersDialog" parent="Theme.AppCompat.Dialog">
+        <item name="background">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>
