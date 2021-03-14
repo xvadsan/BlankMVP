@@ -44,21 +44,17 @@ class CreateFragment : BaseFragment<CreateContract.Presenter>(R.layout.fragment_
     }
 
     private fun onInitUi() = with(binding) {
-        ivBackBtn.onClick { navController.popBackStack() }
+        ivBackBtn.onClick { presenter.back() }
         btnCreate.onClick { onCreateAccount() }
         ivPhoto.onClick { presenter.showMediaDialog() }
     }
 
     private fun onCreateAccount() {
-        if (etUsername.text.toString().isEmpty() || etPassword.text.toString().isEmpty() || getPhoto() == null || getPhoto().contentEquals(ByteArray(0))) {
+        if (etUsername.text.toString().isNotEmpty() && etPassword.text.toString().isNotEmpty()) {
+            presenter.createAccountWithPhoto(login = etUsername.text.toString(), password = etPassword.text.toString(), photo = getPhoto())
+        } else {
             Toast.makeText(requireContext(), getString(R.string.create_error), Toast.LENGTH_SHORT).show()
-            return
         }
-        presenter.createAccount(
-            login = etUsername.text.toString(),
-            password = etPassword.text.toString(),
-            photo = getPhoto()
-        )
     }
 
     override fun onShowMediaDialog() {
@@ -97,10 +93,10 @@ class CreateFragment : BaseFragment<CreateContract.Presenter>(R.layout.fragment_
         dialog.show(requireActivity().supportFragmentManager, TAG_MEDIA_DIALOG)
     }
 
-    private fun getPhoto(): ByteArray? {
+    private fun getPhoto(): ByteArray {
         if (imageUri == null) return ByteArray(0)
-        val bmpPhoto = FileUtils().getBitmapFromUri(requireContext(), imageUri)
-        return bmpPhoto?.let { FileUtils().getImageByteArray(bmp = it) }
+        val resized = FileUtils().photoResize(requireContext(), imageUri) ?: return ByteArray(0)
+        return FileUtils().getImageByteArray(bmp = resized)
     }
 
     private fun setChatAvatar(imageUri: Uri?) {
@@ -113,11 +109,17 @@ class CreateFragment : BaseFragment<CreateContract.Presenter>(R.layout.fragment_
             .into(binding.ivPhoto)
     }
 
+    override fun onShowSuccessMessage() = Toast.makeText(requireContext(), getString(R.string.create_success_create), Toast.LENGTH_SHORT).show()
+
     override fun showError(throwable: Throwable) = Toast.makeText(requireContext(), throwable.message.toString(), Toast.LENGTH_SHORT).show()
 
     override fun onShowLoad() = stateSwitcher.switchToLoading()
 
     override fun onHideLoad() = stateSwitcher.switchToMain()
+
+    override fun onBack() {
+        navController.popBackStack()
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -128,8 +130,6 @@ class CreateFragment : BaseFragment<CreateContract.Presenter>(R.layout.fragment_
 
     companion object {
         private const val IMAGE_MIME_TYPE = "image/*"
-        private const val REQUEST_GALLERY = 1489
-        private const val REQUEST_CAMERA = 1590
         private const val TAG_MEDIA_DIALOG = "mediaDialog"
     }
 }

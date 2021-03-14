@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "UsersPhoto")
 class Photo(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "PhotoId")
     var photoId: Long,

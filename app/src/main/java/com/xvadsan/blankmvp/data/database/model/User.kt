@@ -9,14 +9,10 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "UsersDB")
 class User(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "Id")
-    var id: Long,
-
-    @NonNull
-    @ColumnInfo(name = "User")
-    var user: String,
+    var id: Long = 0,
 
     @ColumnInfo(name = "Login")
     var login: String,

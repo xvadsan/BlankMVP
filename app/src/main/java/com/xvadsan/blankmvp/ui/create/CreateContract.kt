@@ -9,11 +9,14 @@ interface CreateContract {
         fun onHideLoad()
         fun showError(throwable: Throwable)
         fun onShowMediaDialog()
+        fun onShowSuccessMessage()
+        fun onBack()
     }
 
     interface Presenter : BaseContract.Presenter {
         var view: View
-        fun createAccount(login: String, password:String, photo: ByteArray?)
+        fun createAccountWithPhoto(login: String, password:String, photo: ByteArray)
         fun showMediaDialog()
+        fun back()
     }
 }

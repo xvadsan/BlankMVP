@@ -16,4 +16,5 @@
     <string name="media_camera">Camera</string>
     <string name="media_gallery">Gallery</string>
     <string name="create_permission_error">Not all permissions have been granted</string>
+    <string name="create_success_create">Account created</string>
 </resources>

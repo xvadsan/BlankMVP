@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable
 
 abstract class BasePresenter<V : BaseContract.View> : BaseContract.Presenter {
 
-    private var disposables = CompositeDisposable()
+    protected var disposables = CompositeDisposable()
 
     operator fun CompositeDisposable.plusAssign(disposable: Disposable) {
         disposables.add(disposable)

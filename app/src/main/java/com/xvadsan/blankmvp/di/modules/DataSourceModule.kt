@@ -1,14 +1,16 @@
-package com.xvadsan.blankmvp.di
+package com.xvadsan.blankmvp.di.modules
 
 import android.content.Context
 import androidx.room.Room
+import com.xvadsan.blankmvp.data.RoomStorageRepository
 import com.xvadsan.blankmvp.data.database.AppDatabase
+import com.xvadsan.blankmvp.domain.RoomStorageDataSource
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class DatabaseModule {
+class DataSourceModule {
 
     @Singleton
     @Provides
@@ -17,6 +19,12 @@ class DatabaseModule {
             .fallbackToDestructiveMigration()
             .build()
     }
+
+    @Provides
+    @Singleton
+    fun provideRoomStorageDataSource(
+        database: AppDatabase
+    ): RoomStorageDataSource = RoomStorageRepository(database)
 
     companion object {
         private const val DB_NAME = "UsersDB"
