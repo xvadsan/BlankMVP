@@ -7,6 +7,23 @@
     android:background="@color/colorPrimary"
     >
 
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:lines="1"
+        android:maxLength="70"
+        android:singleLine="true"
+        android:text="Common Fragment"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/stateContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <FrameLayout
         android:id="@+id/stateContainer"
         android:layout_width="match_parent"
