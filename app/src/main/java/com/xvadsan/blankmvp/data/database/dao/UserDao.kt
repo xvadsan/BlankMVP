@@ -16,8 +16,8 @@ interface UserDao {
     fun addUser(user: User)
 
     @Query("SELECT * FROM UsersDB WHERE Login = :login AND Password = :password")
-    fun getUser(login: String, password: String): Single<User>
+    fun getUser(login: String, password: String): User
 
     @Query("SELECT * FROM UsersDB WHERE Login = :login AND Password = :password ")
-    fun getUserWithPhoto(login: String, password: String): Single<EmbeddedUserPhoto>
+    fun getUserWithPhoto(login: String, password: String): EmbeddedUserPhoto
 }

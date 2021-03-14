@@ -42,14 +42,22 @@ class StartFragment : BaseFragment<StartContract.Presenter>(R.layout.fragment_st
             }
         }
         tvCreateAccount.onClick { presenter.showCreateFragment() }
-        btnAuthLogin.onClick { presenter.showCommonFragment() }
+        btnAuthLogin.onClick { presenter.login(etUsername.text.toString(), etPassword.text.toString()) }
     }
 
     override fun onShowCommonFragment() = navController.navigate(R.id.commonFragment)
 
     override fun onShowCreateFragment() = navController.navigate(R.id.createFragment)
 
-    override fun showError(throwable: Throwable) = Toast.makeText(requireContext(), throwable.message.toString(), Toast.LENGTH_SHORT).show()
+    override fun onShowLoginError() = Toast.makeText(requireContext(), getString(R.string.start_auth_error), Toast.LENGTH_SHORT).show()
+
+    override fun showError(throwable: Throwable) {
+        if (throwable.message?.contains("The callable returned a null value") == true) {
+            onShowLoginError()
+            return
+        }
+        Toast.makeText(requireContext(), throwable.message.toString(), Toast.LENGTH_SHORT).show()
+    }
 
     override fun onShowLoad() = stateSwitcher.switchToLoading()
 

@@ -1,10 +1,12 @@
 package com.xvadsan.blankmvp.data
 
 import com.xvadsan.blankmvp.data.database.AppDatabase
+import com.xvadsan.blankmvp.data.database.model.EmbeddedUserPhoto
 import com.xvadsan.blankmvp.data.database.model.Photo
 import com.xvadsan.blankmvp.data.database.model.User
 import com.xvadsan.blankmvp.domain.RoomStorageDataSource
 import io.reactivex.Completable
+import io.reactivex.Single
 import javax.inject.Inject
 
 class RoomStorageRepository @Inject constructor(
@@ -21,5 +23,9 @@ class RoomStorageRepository @Inject constructor(
         return Completable.fromCallable {
             database.photoDao().addItem(photo = Photo(photoId = 0, photo = photo))
         }
+    }
+
+    override fun getUser(login: String, password: String): Single<EmbeddedUserPhoto> = Single.fromCallable {
+        database.userDao().getUserWithPhoto(login = login, password = password)
     }
 }
