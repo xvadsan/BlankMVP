@@ -14,6 +14,4 @@ Use:
 - Room with embedded and relation models
 - Jetpack Activity Result API (extensions)
 
-![X Text](https://i.ibb.co/NWL74nm/ezgif-com-gif-maker.gif)
-
-![X Text](https://i.ibb.co/7Sfwft4/ezgif-com-gif-maker-1.gif)
+![X Text](https://s4.gifyu.com/images/ezgif.com-gif-maker-20b39d72e83cfa193.gif)
