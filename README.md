@@ -12,4 +12,4 @@ Use:
 - ViewBindingPropertyDelegate
 - Glide with custom AppGlideModule
 - Room with embedded and relation models
-- Jetpack Activity Result API
+- Jetpack Activity Result API (extensions)
