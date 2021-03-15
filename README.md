@@ -13,3 +13,5 @@ Use:
 - Glide with custom AppGlideModule
 - Room with embedded and relation models
 - Jetpack Activity Result API (extensions)
+
+![X Text](https://im.ezgif.com/tmp/ezgif-1-ae93b82132b5.gif)
