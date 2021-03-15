@@ -1,4 +1,4 @@
-<h1 align="center">Blank for MVP pattern projects 🕶</h1>
+<h1 align="start">Blank for MVP pattern projects 🕶</h1>
 
 ## Use:
 - MVP
