@@ -18,4 +18,6 @@
     <string name="create_permission_error">Not all permissions have been granted</string>
     <string name="create_success_create">Account created</string>
     <string name="start_auth_error">Authorisation Error</string>
+    <string name="toolbar_title">All profiles</string>
+    <string name="start_user_not_found">The callable returned a null value</string>
 </resources>

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@drawable/btn_white_bgrd14"
+        android:background="@drawable/white_bgrd8"
         android:orientation="vertical"
         >
 
@@ -19,7 +19,7 @@
             android:id="@+id/tvCamera"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/dialog_bg14_ripple_top"
+            android:background="@drawable/dialog_bg8_ripple_top"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
@@ -39,7 +39,7 @@
             android:id="@+id/tvGallery"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/dialog_bg14_ripple_bottom"
+            android:background="@drawable/dialog_bg8_ripple_bottom"
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"

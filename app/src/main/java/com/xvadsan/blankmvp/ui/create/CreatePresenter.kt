@@ -33,5 +33,7 @@ class CreatePresenter @Inject constructor(
 
     override fun showMediaDialog() = view.onShowMediaDialog()
 
+    override fun toast(mes: String) = view.onToast(mes = mes)
+
     override fun back() = view.onBack()
 }

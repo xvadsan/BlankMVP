@@ -5,10 +5,10 @@
         <shape>
             <solid android:color="#000000" />
             <corners
-                android:bottomLeftRadius="0.1dp"
-                android:bottomRightRadius="0.1dp"
-                android:topLeftRadius="14dp"
-                android:topRightRadius="14dp" />
+                android:bottomLeftRadius="8dp"
+                android:bottomRightRadius="8dp"
+                android:topLeftRadius="0.1dp"
+                android:topRightRadius="0.1dp" />
         </shape>
     </item>
 </ripple>

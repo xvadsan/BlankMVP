@@ -28,4 +28,8 @@ class RoomStorageRepository @Inject constructor(
     override fun getUser(login: String, password: String): Single<EmbeddedUserPhoto> = Single.fromCallable {
         database.userDao().getUserWithPhoto(login = login, password = password)
     }
+
+    override fun getUsers(): Single<List<EmbeddedUserPhoto>> = Single.fromCallable {
+        database.userDao().getUsersWithPhoto()
+    }
 }

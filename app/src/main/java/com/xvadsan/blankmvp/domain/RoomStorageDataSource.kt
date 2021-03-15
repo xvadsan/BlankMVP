@@ -9,4 +9,5 @@ interface RoomStorageDataSource {
     fun addUser(login: String, password: String): Completable
     fun addPhoto(photo: ByteArray): Completable
     fun getUser(login: String, password: String): Single<EmbeddedUserPhoto>
+    fun getUsers(): Single<List<EmbeddedUserPhoto>>
 }

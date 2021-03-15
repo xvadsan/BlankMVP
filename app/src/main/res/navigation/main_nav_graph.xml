@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_startFragment_to_commonFragment"
             app:destination="@id/commonFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/main_nav_graph"
+            app:popUpToInclusive="true"
             />
         <action
             android:id="@+id/action_startFragment_to_createFragment"

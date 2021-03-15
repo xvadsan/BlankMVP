@@ -9,6 +9,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.xvadsan.blankmvp.App
 import com.xvadsan.blankmvp.R
 import com.xvadsan.blankmvp.base.BaseFragment
+import com.xvadsan.blankmvp.base.extensions.hideKeyboard
 import com.xvadsan.blankmvp.base.extensions.onClick
 import com.xvadsan.blankmvp.databinding.FragmentStartBinding
 import com.xvadsan.blankmvp.ui.switcher.StateViewSwitcher
@@ -45,14 +46,18 @@ class StartFragment : BaseFragment<StartContract.Presenter>(R.layout.fragment_st
         btnAuthLogin.onClick { presenter.login(etUsername.text.toString(), etPassword.text.toString()) }
     }
 
-    override fun onShowCommonFragment() = navController.navigate(R.id.commonFragment)
+    override fun onShowCommonFragment() {
+        requireActivity().hideKeyboard(requireView())
+        navController.popBackStack(R.id.commonFragment, true)
+        navController.navigate(R.id.commonFragment)
+    }
 
     override fun onShowCreateFragment() = navController.navigate(R.id.createFragment)
 
     override fun onShowLoginError() = Toast.makeText(requireContext(), getString(R.string.start_auth_error), Toast.LENGTH_SHORT).show()
 
     override fun showError(throwable: Throwable) {
-        if (throwable.message?.contains("The callable returned a null value") == true) {
+        if (throwable.message?.contains(getString(R.string.start_user_not_found)) == true) {
             onShowLoginError()
             return
         }

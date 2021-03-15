@@ -14,10 +14,7 @@ import com.xvadsan.blankmvp.App
 import com.xvadsan.blankmvp.BuildConfig
 import com.xvadsan.blankmvp.R
 import com.xvadsan.blankmvp.base.BaseFragment
-import com.xvadsan.blankmvp.base.extensions.getContent
-import com.xvadsan.blankmvp.base.extensions.onClick
-import com.xvadsan.blankmvp.base.extensions.permissions
-import com.xvadsan.blankmvp.base.extensions.takePhoto
+import com.xvadsan.blankmvp.base.extensions.*
 import com.xvadsan.blankmvp.data.image.GlideApp
 import com.xvadsan.blankmvp.databinding.FragmentCreateBinding
 import com.xvadsan.blankmvp.ui.dialogs.media.MediaDialog
@@ -51,46 +48,50 @@ class CreateFragment : BaseFragment<CreateContract.Presenter>(R.layout.fragment_
 
     private fun onCreateAccount() {
         if (etUsername.text.toString().isNotEmpty() && etPassword.text.toString().isNotEmpty()) {
+            requireActivity().hideKeyboard(requireView())
             presenter.createAccountWithPhoto(login = etUsername.text.toString(), password = etPassword.text.toString(), photo = getPhoto())
         } else {
-            Toast.makeText(requireContext(), getString(R.string.create_error), Toast.LENGTH_SHORT).show()
+            presenter.toast(getString(R.string.create_error))
         }
     }
 
     override fun onShowMediaDialog() {
         val dialog = MediaDialog()
         dialog.onSetListener(object : MediaDialog.Listener {
-            override fun onClickCamera() {
-                permissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA) {
-                    this.allGranted {
-                        imageUri = FileProvider.getUriForFile(requireContext(), "${BuildConfig.APPLICATION_ID}.fileprovider", FileUtils().createPhoto(requireContext()))
-                        takePhoto(imageUri) { success ->
-                            if (success == true)
-                                setChatAvatar(imageUri = imageUri)
-                        }
-                    }
-                    this.denied {
-                        Toast.makeText(requireContext(), getString(R.string.create_permission_error), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-
-            override fun onClickGallery() {
-                permissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE) {
-                    this.allGranted {
-                        getContent(IMAGE_MIME_TYPE) { uri ->
-                            imageUri = uri
-                            setChatAvatar(imageUri = imageUri)
-                        }
-                    }
-                    this.denied {
-                        Toast.makeText(requireContext(), getString(R.string.create_permission_error), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            override fun onClickCamera() = takePhotoAndPermissions()
+            override fun onClickGallery() = takePicAndPermissions()
         })
         dialog.isCancelable = true
         dialog.show(requireActivity().supportFragmentManager, TAG_MEDIA_DIALOG)
+    }
+
+    private fun takePhotoAndPermissions() {
+        permissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA) {
+            this.allGranted {
+                imageUri = FileProvider.getUriForFile(requireContext(), "${BuildConfig.APPLICATION_ID}.fileprovider", FileUtils().createPhoto(requireContext()))
+                takePhoto(imageUri) { success ->
+                    if (success == true)
+                        setChatAvatar(imageUri = imageUri)
+                }
+            }
+            this.denied {
+                presenter.toast(getString(R.string.create_permission_error))
+            }
+        }
+    }
+
+    private fun takePicAndPermissions() {
+        permissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE) {
+            this.allGranted {
+                getContent(IMAGE_MIME_TYPE) { uri ->
+                    imageUri = uri
+                    setChatAvatar(imageUri = imageUri)
+                }
+            }
+            this.denied {
+                presenter.toast(getString(R.string.create_permission_error))
+            }
+        }
     }
 
     private fun getPhoto(): ByteArray {
@@ -108,6 +109,8 @@ class CreateFragment : BaseFragment<CreateContract.Presenter>(R.layout.fragment_
             .circleCrop()
             .into(binding.ivPhoto)
     }
+
+    override fun onToast(mes: String) = Toast.makeText(requireContext(), mes, Toast.LENGTH_SHORT).show()
 
     override fun onShowSuccessMessage() = Toast.makeText(requireContext(), getString(R.string.create_success_create), Toast.LENGTH_SHORT).show()
 

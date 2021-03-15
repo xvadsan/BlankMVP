@@ -11,12 +11,14 @@ interface CreateContract {
         fun onShowMediaDialog()
         fun onShowSuccessMessage()
         fun onBack()
+        fun onToast(mes: String)
     }
 
     interface Presenter : BaseContract.Presenter {
         var view: View
         fun createAccountWithPhoto(login: String, password:String, photo: ByteArray)
         fun showMediaDialog()
+        fun toast(mes: String)
         fun back()
     }
 }
