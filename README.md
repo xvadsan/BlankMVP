@@ -1,6 +1,7 @@
-Blank for MVP pattern projects 🕶
+<h1 align="center">Blank for MVP pattern projects 🕶</h1>
+<h2 align="center">
 
-Use:
+## Use:
 - MVP
 - Dagger2
 - RxJava2
