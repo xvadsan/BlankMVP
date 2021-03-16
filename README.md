@@ -14,4 +14,4 @@
 - Room with embedded and relation models
 - Jetpack Activity Result API (extensions)
 
-![X Text](https://im.ezgif.com/tmp/ezgif-1-ae93b82132b5.gif)
+![X Text](https://github.com/xvadsan/BlankMVP/blob/master/anim_gif.gif)
