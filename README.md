@@ -15,4 +15,3 @@
 - Jetpack Activity Result API (extensions)
 
 ![X Text](https://github.com/xvadsan/BlankMVP/blob/master/anim_gif.gif)
-
